@@ -1,23 +1,46 @@
-# Read Me First
-The following was discovered as part of building this project:
+# Framework: SpringBoot
+# Language: Java
 
-* The original package name 'com.project.system.User Management System with validation' is invalid and this project uses 'com.project.system.User.Management.System.with.validation' instead.
+# Data Flow:
+## 1) Controller: 
+### Add student: 
+@PostMapping("/addStudent/id/{id}")
+             public void addStudent(@PathVariable String id, @RequestBody Student s)
+                
+### update student department: 
+@PutMapping("/updateStudentDepartment/id/{id}")
+                             public void updateDepartment(@PathVariable String id,@RequestBody String d)
+                             
+### delete student:  
+@DeleteMapping("/deleteStudentinfo/id/{id}")
+                  public void deleteStudent(@PathVariable String id)
+                  
+### Get all students: 
+@GetMapping("/getAllStudent")
+                  public HashMap<String, Student> getAllStudent()
+                  
+### Get student by Id: 
+@GetMapping("/getStudentbyId/id/{id}")
+                    public Student getStudentbyId(@PathVariable String id)
 
-# Getting Started
+### Add event:  
+@PostMapping("/addEvent/id/{id}")
+            public void addEvent(@PathVariable String id, @RequestBody Event e)
 
-### Reference Documentation
-For further reference, please consider the following sections:
+### Update event:
+@PutMapping("/updateEvent/id/{id}")
+                public void updateEvent(@PathVariable String id,@RequestBody Event e)
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/3.0.2/maven-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/3.0.2/maven-plugin/reference/html/#build-image)
-* [Spring Boot DevTools](https://docs.spring.io/spring-boot/docs/3.0.2/reference/htmlsingle/#using.devtools)
-* [Spring Web](https://docs.spring.io/spring-boot/docs/3.0.2/reference/htmlsingle/#web)
+### Delete event: 
+@DeleteMapping("/deleteEvent/id/{id}")
+                 public void deleteEvent(@PathVariable Event e)
 
-### Guides
-The following guides illustrate how to use some features concretely:
+### Get All event by date:
+@GetMapping("/getAllEventbyDate/date/{d}")
+                        public HashMap<String, Event> getAll(@PathVariable String d)
+                        
 
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
+## 2) Service:
+Created two hashmap one for student details and another one for event details
 
+This project is for University Event Management
