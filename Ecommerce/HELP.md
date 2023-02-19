@@ -1,20 +1,40 @@
-# Getting Started
+# Framework: SpringBoot
+# Language: Java
 
-### Reference Documentation
-For further reference, please consider the following sections:
+# Data Flow:
+## 1) Controller: 
+### save Address: 
+ @PostMapping(value = "/address")
+    public ResponseEntity<String> saveAddress(@RequestBody String address)
+                
+### save order: 
+ @PostMapping(value = "/order")
+    public ResponseEntity<String> saveOrder(@RequestBody String order)
+                             
+### get order:  
+ @GetMapping(value = "/getOrder")
+    public Order getOrder(@RequestParam Integer orderId)
+                  
+### save product: 
+ @PostMapping(value = "/product")
+    public ResponseEntity<String> saveProduct(@RequestBody String product)
+                  
+### Get Product: 
+ @GetMapping(value = "/getProduct")
+    public ResponseEntity getProductByCtg(@RequestParam String category)
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/3.0.2/maven-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/3.0.2/maven-plugin/reference/html/#build-image)
-* [Spring Boot DevTools](https://docs.spring.io/spring-boot/docs/3.0.2/reference/htmlsingle/#using.devtools)
-* [Spring Web](https://docs.spring.io/spring-boot/docs/3.0.2/reference/htmlsingle/#web)
-* [Spring Data JPA](https://docs.spring.io/spring-boot/docs/3.0.2/reference/htmlsingle/#data.sql.jpa-and-spring-data)
+### get product:  
+ @DeleteMapping(value = "/deleteProduct")
+    public void getProduct(@RequestParam Integer productId)
 
-### Guides
-The following guides illustrate how to use some features concretely:
+### save user:
+ @PostMapping(value = "/user")
+    public ResponseEntity<String> saveUser(@RequestBody String user)
 
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
-* [Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/)
+### get user: 
+ @GetMapping(value = "/getUser")
+    public User getUser(@RequestParam Integer userId)
+
+
+                        
 
