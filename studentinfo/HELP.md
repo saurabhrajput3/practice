@@ -1,20 +1,70 @@
-# Getting Started
+# Framework: SpringBoot
+# Language: Java
 
-### Reference Documentation
-For further reference, please consider the following sections:
+# Data Flow:
+## 1) Controller: 
+### add Book: 
+    @PostMapping
+        public Book addBook(@RequestBody Book book)
+        
+### get Book: 
+  @GetMapping("/{bookId}")
+        public Book getBook(@PathVariable String bookId) 
+                             
+### get all book:  
+   @GetMapping
+        public List<Book> getAllBook()
+                  
+### get all book b studentid: 
+   @GetMapping("/student/{studentID}")
+        public List<Book> getAllBook(@PathVariable(value = "studentID") String studentID)
+                  
+### add course: 
+ @PostMapping
+    public Course addCourse(@RequestBody Course course)
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/3.0.3/maven-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/3.0.3/maven-plugin/reference/html/#build-image)
-* [Spring Boot DevTools](https://docs.spring.io/spring-boot/docs/3.0.3/reference/htmlsingle/#using.devtools)
-* [Spring Web](https://docs.spring.io/spring-boot/docs/3.0.3/reference/htmlsingle/#web)
-* [Spring Data JPA](https://docs.spring.io/spring-boot/docs/3.0.3/reference/htmlsingle/#data.sql.jpa-and-spring-data)
+### get course:  
+  @GetMapping("/{courseId}")
+    public Course getCourse(@PathVariable String courseId)
 
-### Guides
-The following guides illustrate how to use some features concretely:
+### add laptop:
+   @PostMapping
+    public Laptop addLaptop(@RequestBody Laptop laptop) 
 
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
-* [Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/)
+### get all laptop: 
+   @GetMapping("/{laptopId}")
+    public Laptop getLaptop(@PathVariable String laptopId) 
+ 
+ 
+ ## 2) Service:
+ 
+ ### save user:
+  public void saveUser(User user)
+ 
+ ### get User:
+  public User getUser(Integer id)
+ 
+ 
+### save product:
+  public void saveProduct(Product product)
+ 
+ ### get product:
+    public JSONArray getProduct(String category)
+ 
+ ### delete product:
+   public void deleteProduct(Integer productId)
+ 
+ ### save product:
+  public void saveOrder(Order o)
+ 
+ ### get order:
+   public Order getOrder(Integer orderId)
+ 
+ ### save address:
+  public void saveAddress(Address a)
+ 
+ 
+
+
+                        
 
