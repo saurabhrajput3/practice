@@ -1,27 +1,44 @@
-# Read Me First
-The following was discovered as part of building this project:
+# Framework: SpringBoot
+# Language: Java
 
-* The original package name 'com.chatapplication.chat application' is invalid and this project uses 'com.chatapplication.chat.application' instead.
+# Data Flow:
+## 1) Controller: 
+### create user: 
+  @PostMapping(value="/create-user")
+        public ResponseEntity<String> createUser(@RequestBody String userData)
+    
+### get user by userid: 
+     @GetMapping(value = "/get-users")
+        public ResponseEntity<String> getUsers(@Nullable @RequestParam String userId)
+                             
+### login:  
+@PostMapping(value = "/login")
+        public ResponseEntity<String> login(@RequestBody String requestData)
+                  
+### update user by userid: 
+ @PutMapping(value ="/update-user/{userId}")
+            public ResponseEntity<String> updateUser(@PathVariable String userId,@RequestBody String requestData)
+                  
+###  user user by userid: 
+ @DeleteMapping(value = "/delete-user/{userId}")
+            public ResponseEntity<String> deleteUser(@PathVariable int userId)
 
-# Getting Started
+### create status:  
+  @PostMapping("/create-status")
+    public ResponseEntity<String> createStatus(@RequestBody String statusData)
 
-### Reference Documentation
-For further reference, please consider the following sections:
-
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.7.9/maven-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/2.7.9/maven-plugin/reference/html/#build-image)
-* [Spring Boot DevTools](https://docs.spring.io/spring-boot/docs/2.7.9/reference/htmlsingle/#using.devtools)
-* [Spring Web](https://docs.spring.io/spring-boot/docs/2.7.9/reference/htmlsingle/#web)
-* [Validation](https://docs.spring.io/spring-boot/docs/2.7.9/reference/htmlsingle/#io.validation)
-* [Spring Data JPA](https://docs.spring.io/spring-boot/docs/2.7.9/reference/htmlsingle/#data.sql.jpa-and-spring-data)
-
-### Guides
-The following guides illustrate how to use some features concretely:
-
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
-* [Validation](https://spring.io/guides/gs/validating-form-input/)
-* [Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/)
-
+ 
+ 
+ ## 2) Service:
+ 
+ ### save user:
+  public int saveUser(Users user)
+ 
+ ### get user:
+    public JSONArray getUsers(String userId)
+ 
+ 
+### update user:
+  public JSONObject updateUser(Users newUser,String userId)
+ 
+ 
