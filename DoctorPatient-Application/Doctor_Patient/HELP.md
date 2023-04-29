@@ -1,6 +1,19 @@
 # Backend APIs for Doctor-Patient Platform
  ### This repository contains the code for building a backend API that manages the doctor-patient platform. The API has been built using Spring Boot framework and Hibernate for database operations.
 
+## Swagger URL:
+http://localhost:8080/swagger-ui/index.html#/
+
+## Tech Used:
+- Java
+- oops concepts
+- Spring Boot 
+- Swagger 
+- H2 data base 
+- Rest api's 
+- Hibernate 
+- Maven 
+
 ## Features
 ## The API includes the following features:
 
