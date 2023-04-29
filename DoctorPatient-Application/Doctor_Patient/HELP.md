@@ -1,6 +1,9 @@
 # Backend APIs for Doctor-Patient Platform
  ### This repository contains the code for building a backend API that manages the doctor-patient platform. The API has been built using Spring Boot framework and Hibernate for database operations.
 
+## Project link:
+https://github.com/saurabhrajput3/practice/tree/main/DoctorPatient-Application/Doctor_Patient
+
 ## Swagger URL:
 http://localhost:8080/swagger-ui/index.html#/
 
